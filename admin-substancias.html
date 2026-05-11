@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>IBAI Diagnósticos — Admin · Substâncias</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>body{font-family:'Inter',ui-sans-serif,system-ui}</style>
+</head>
+<body class="min-h-screen bg-slate-50">
+
+  <!-- Sidebar Admin (visual diferente do médico) -->
+  <aside class="fixed left-0 top-0 h-full w-64 bg-slate-900 text-slate-200 flex flex-col">
+    <div class="p-5 border-b border-slate-800 flex items-center gap-2.5">
+      <div class="w-9 h-9 rounded-lg bg-sky-600 flex items-center justify-center">
+        <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2v20M2 12h20" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="text-sm font-bold text-white leading-tight">IBAI</div>
+        <div class="text-[10px] font-medium text-sky-400 tracking-widest uppercase">Admin</div>
+      </div>
+    </div>
+    <nav class="flex-1 p-3 text-sm">
+      <a href="admin-substancias.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-sky-600/20 text-sky-300 font-medium mb-1">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33h0a1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09M4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h0a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09M21 12h-.09a1.65 1.65 0 0 0-1.51 1v0a1.65 1.65 0 0 0 .33 1.82l.06.06"/><circle cx="12" cy="12" r="3"/></svg>
+        Substâncias
+      </a>
+      <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 mb-1">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        Modelos IBAI
+      </a>
+      <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 mb-1">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2M17 11l2 2 4-4"/></svg>
+        Médicos
+      </a>
+      <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800 mb-1">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M9 17V9M14 17v-5M19 17v-3"/></svg>
+        Métricas
+      </a>
+      <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-300 hover:bg-slate-800">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+        Auditoria
+      </a>
+    </nav>
+    <div class="p-3 border-t border-slate-800">
+      <div class="flex items-center gap-2.5 px-2 py-2">
+        <div class="w-8 h-8 rounded-full bg-sky-600/30 text-sky-300 flex items-center justify-center text-xs font-semibold">PW</div>
+        <div class="flex-1 min-w-0">
+          <div class="text-sm font-medium text-white truncate">Pedro Wlassak</div>
+          <div class="text-xs text-slate-400 truncate">Admin IBAI</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="ml-64 p-8">
+    <div class="mb-5">
+      <div class="text-xs text-slate-500 mb-1">Admin IBAI · Catálogo</div>
+      <div class="flex items-end justify-between">
+        <div>
+          <h1 class="text-2xl font-semibold text-slate-900">Substâncias</h1>
+          <p class="text-sm text-slate-500 mt-1">Catálogo global usado por todos os médicos cadastrados.</p>
+        </div>
+        <div class="flex gap-2">
+          <button class="px-3 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 inline-flex items-center gap-1.5">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+            Importar CSV
+          </button>
+          <button class="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white text-sm font-medium rounded-lg shadow-sm">+ Nova substância</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Estatísticas -->
+    <div class="grid grid-cols-4 gap-4 mb-5">
+      <div class="bg-white border border-slate-200 rounded-xl p-4">
+        <div class="text-xs text-slate-500">Total</div>
+        <div class="text-2xl font-semibold text-slate-900">170</div>
+        <div class="text-[10px] text-slate-400 mt-1">após limpeza do Duo</div>
+      </div>
+      <div class="bg-white border border-emerald-100 rounded-xl p-4">
+        <div class="text-xs text-emerald-600">Aprovadas</div>
+        <div class="text-2xl font-semibold text-emerald-700">34</div>
+        <div class="text-[10px] text-emerald-600 mt-1">prontas para uso</div>
+      </div>
+      <div class="bg-white border border-amber-100 rounded-xl p-4">
+        <div class="text-xs text-amber-700">Pendentes</div>
+        <div class="text-2xl font-semibold text-amber-700">128</div>
+        <div class="text-[10px] text-amber-600 mt-1">aguardando revisão clínica</div>
+      </div>
+      <div class="bg-white border border-slate-200 rounded-xl p-4">
+        <div class="text-xs text-slate-500">Rascunho</div>
+        <div class="text-2xl font-semibold text-slate-900">8</div>
+        <div class="text-[10px] text-slate-400 mt-1">campos incompletos</div>
+      </div>
+    </div>
+
+    <!-- Progresso revisão -->
+    <div class="bg-white border border-slate-200 rounded-xl p-4 mb-5">
+      <div class="flex items-center justify-between mb-2">
+        <div class="text-sm font-semibold text-slate-900">Progresso da revisão clínica</div>
+        <div class="text-xs text-slate-500"><strong class="text-slate-900">34 de 170</strong> · 20%</div>
+      </div>
+      <div class="h-2 bg-slate-100 rounded-full overflow-hidden">
+        <div class="h-full bg-gradient-to-r from-emerald-500 to-emerald-400" style="width:20%"></div>
+      </div>
+      <div class="text-[11px] text-slate-500 mt-2">Revisão feita por <strong>Dra. Beatriz Lima</strong>. Ritmo médio: 8 substâncias/dia.</div>
+    </div>
+
+    <!-- Filtros -->
+    <div class="bg-white border border-slate-200 rounded-xl p-4 mb-4 flex gap-3 items-center">
+      <div class="flex-1 relative">
+        <svg class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg>
+        <input type="text" placeholder="Buscar por nome, sinônimo ou código" class="w-full pl-9 pr-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500">
+      </div>
+      <select class="px-3 py-2 border border-slate-200 rounded-lg text-sm">
+        <option>Todas as categorias</option>
+        <option>Ácaros</option><option>Fungos</option><option>Pólens</option><option>Epitélios</option><option>Insetos</option><option>Alimentos</option><option>Outros</option>
+      </select>
+      <select class="px-3 py-2 border border-slate-200 rounded-lg text-sm">
+        <option>Todos os status</option>
+        <option>Aprovada</option><option>Pendente revisão</option><option>Rascunho</option>
+      </select>
+      <select class="px-3 py-2 border border-slate-200 rounded-lg text-sm">
+        <option>Todos os testes</option>
+        <option>Prick</option>
+      </select>
+    </div>
+
+    <!-- Tabela -->
+    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="text-left text-xs font-medium text-slate-500 bg-slate-50 border-b border-slate-100">
+            <th class="px-5 py-3 w-12"><input type="checkbox" class="rounded border-slate-300"></th>
+            <th class="px-2 py-3">Substância</th>
+            <th class="px-2 py-3">Categoria</th>
+            <th class="px-2 py-3">% / Veículo</th>
+            <th class="px-2 py-3">Sinônimos</th>
+            <th class="px-2 py-3">Status</th>
+            <th class="px-2 py-3 text-right">Ações</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100">
+          <tr class="hover:bg-slate-50/50">
+            <td class="px-5 py-3"><input type="checkbox" class="rounded border-slate-300"></td>
+            <td class="px-2"><div class="text-slate-900 font-medium">Dermatophagoides farinae</div><div class="text-[10px] text-slate-500">Ácaro americano · cód. ACR-DF</div></td>
+            <td class="px-2"><span class="text-xs px-2 py-0.5 rounded-md bg-sky-100 text-sky-700 font-medium">Ácaros</span></td>
+            <td class="px-2 text-xs text-slate-600">10.000 UA/mL · glicerinado</td>
+            <td class="px-2 text-xs text-slate-500">D. farinae · ácaro americano</td>
+            <td class="px-2"><span class="text-xs inline-flex items-center gap-1 text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Aprovada</span></td>
+            <td class="px-2 text-right whitespace-nowrap"><button class="text-xs text-sky-600 hover:text-sky-700 font-medium mr-3">Editar</button><button class="text-xs text-slate-400 hover:text-red-600">Arquivar</button></td>
+          </tr>
+          <tr class="hover:bg-slate-50/50">
+            <td class="px-5 py-3"><input type="checkbox" class="rounded border-slate-300"></td>
+            <td class="px-2"><div class="text-slate-900 font-medium">Dermatophagoides pteronyssinus</div><div class="text-[10px] text-slate-500">Ácaro europeu · cód. ACR-DP</div></td>
+            <td class="px-2"><span class="text-xs px-2 py-0.5 rounded-md bg-sky-100 text-sky-700 font-medium">Ácaros</span></td>
+            <td class="px-2 text-xs text-slate-600">10.000 UA/mL · glicerinado</td>
+            <td class="px-2 text-xs text-slate-500">D. pteronyssinus · ácaro europeu</td>
+            <td class="px-2"><span class="text-xs inline-flex items-center gap-1 text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Aprovada</span></td>
+            <td class="px-2 text-right whitespace-nowrap"><button class="text-xs text-sky-600 hover:text-sky-700 font-medium mr-3">Editar</button><button class="text-xs text-slate-400 hover:text-red-600">Arquivar</button></td>
+          </tr>
+          <tr class="hover:bg-slate-50/50 bg-amber-50/30">
+            <td class="px-5 py-3"><input type="checkbox" class="rounded border-slate-300"></td>
+            <td class="px-2"><div class="text-slate-900 font-medium">Tyrophagus putrescentiae</div><div class="text-[10px] text-slate-500">Ácaro de armazenamento · cód. ACR-TP</div></td>
+            <td class="px-2"><span class="text-xs px-2 py-0.5 rounded-md bg-sky-100 text-sky-700 font-medium">Ácaros</span></td>
+            <td class="px-2 text-xs text-slate-500 italic">— pendente —</td>
+            <td class="px-2 text-xs text-slate-500 italic">— pendente —</td>
+            <td class="px-2"><span class="text-xs inline-flex items-center gap-1 text-amber-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Pendente revisão</span></td>
+            <td class="px-2 text-right whitespace-nowrap"><button class="text-xs text-sky-600 hover:text-sky-700 font-medium mr-3">Revisar</button><button class="text-xs text-slate-400 hover:text-red-600">Arquivar</button></td>
+          </tr>
+          <tr class="hover:bg-slate-50/50">
+            <td class="px-5 py-3"><input type="checkbox" class="rounded border-slate-300"></td>
+            <td class="px-2"><div class="text-slate-900 font-medium">Blomia tropicalis</div><div class="text-[10px] text-slate-500">Ácaro tropical · cód. ACR-BT</div></td>
+            <td class="px-2"><span class="text-xs px-2 py-0.5 rounded-md bg-sky-100 text-sky-700 font-medium">Ácaros</span></td>
+            <td class="px-2 text-xs text-slate-600">10.000 UA/mL · glicerinado</td>
+            <td class="px-2 text-xs text-slate-500">Blomia · ácaro tropical brasileiro</td>
+            <td class="px-2"><span class="text-xs inline-flex items-center gap-1 text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Aprovada</span></td>
+            <td class="px-2 text-right whitespace-nowrap"><button class="text-xs text-sky-600 hover:text-sky-700 font-medium mr-3">Editar</button><button class="text-xs text-slate-400 hover:text-red-600">Arquivar</button></td>
+          </tr>
+          <tr class="hover:bg-slate-50/50 bg-amber-50/30">
+            <td class="px-5 py-3"><input type="checkbox" class="rounded border-slate-300"></td>
+            <td class="px-2"><div class="text-slate-900 font-medium">Glycyphagus domesticus</div><div class="text-[10px] text-slate-500">Ácaro de armazenamento · cód. ACR-GD</div></td>
+            <td class="px-2"><span class="text-xs px-2 py-0.5 rounded-md bg-sky-100 text-sky-700 font-medium">Ácaros</span></td>
+            <td class="px-2 text-xs text-slate-500 italic">— pendente —</td>
+            <td class="px-2 text-xs text-slate-500 italic">— pendente —</td>
+            <td class="px-2"><span class="text-xs inline-flex items-center gap-1 text-amber-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Pendente revisão</span></td>
+            <td class="px-2 text-right whitespace-nowrap"><button class="text-xs text-sky-600 hover:text-sky-700 font-medium mr-3">Revisar</button><button class="text-xs text-slate-400 hover:text-red-600">Arquivar</button></td>
+          </tr>
+          <tr class="hover:bg-slate-50/50">
+            <td class="px-5 py-3"><input type="checkbox" class="rounded border-slate-300"></td>
+            <td class="px-2"><div class="text-slate-900 font-medium">Alternaria alternata</div><div class="text-[10px] text-slate-500">Fungo do ar · cód. FNG-AA</div></td>
+            <td class="px-2"><span class="text-xs px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-700 font-medium">Fungos</span></td>
+            <td class="px-2 text-xs text-slate-600">1:20 (w/v) · glicerinado</td>
+            <td class="px-2 text-xs text-slate-500">Alternaria · fungo dematiáceo</td>
+            <td class="px-2"><span class="text-xs inline-flex items-center gap-1 text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Aprovada</span></td>
+            <td class="px-2 text-right whitespace-nowrap"><button class="text-xs text-sky-600 hover:text-sky-700 font-medium mr-3">Editar</button><button class="text-xs text-slate-400 hover:text-red-600">Arquivar</button></td>
+          </tr>
+          <tr class="hover:bg-slate-50/50 bg-amber-50/30">
+            <td class="px-5 py-3"><input type="checkbox" class="rounded border-slate-300"></td>
+            <td class="px-2"><div class="text-slate-900 font-medium">Cladosporium herbarum</div><div class="text-[10px] text-slate-500">Fungo do ar · cód. FNG-CH</div></td>
+            <td class="px-2"><span class="text-xs px-2 py-0.5 rounded-md bg-emerald-100 text-emerald-700 font-medium">Fungos</span></td>
+            <td class="px-2 text-xs text-slate-500 italic">— pendente —</td>
+            <td class="px-2 text-xs text-slate-500 italic">— pendente —</td>
+            <td class="px-2"><span class="text-xs inline-flex items-center gap-1 text-amber-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Pendente revisão</span></td>
+            <td class="px-2 text-right whitespace-nowrap"><button class="text-xs text-sky-600 hover:text-sky-700 font-medium mr-3">Revisar</button><button class="text-xs text-slate-400 hover:text-red-600">Arquivar</button></td>
+          </tr>
+          <tr class="hover:bg-slate-50/50 bg-slate-50/40">
+            <td class="px-5 py-3"><input type="checkbox" class="rounded border-slate-300"></td>
+            <td class="px-2"><div class="text-slate-900 font-medium">Lolium perenne</div><div class="text-[10px] text-slate-500">Azevém · cód. POL-LP</div></td>
+            <td class="px-2"><span class="text-xs px-2 py-0.5 rounded-md bg-amber-100 text-amber-700 font-medium">Pólens</span></td>
+            <td class="px-2 text-xs text-amber-700">campos incompletos</td>
+            <td class="px-2 text-xs text-slate-500 italic">—</td>
+            <td class="px-2"><span class="text-xs inline-flex items-center gap-1 text-slate-600 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>Rascunho</span></td>
+            <td class="px-2 text-right whitespace-nowrap"><button class="text-xs text-sky-600 hover:text-sky-700 font-medium mr-3">Completar</button><button class="text-xs text-slate-400 hover:text-red-600">Excluir</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="px-5 py-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+        <div class="flex items-center gap-3">
+          <span>Mostrando 1–8 de 170</span>
+          <button class="text-sky-600 hover:text-sky-700 font-medium" disabled>Aprovar selecionadas (0)</button>
+        </div>
+        <div class="flex gap-1">
+          <button class="px-2 py-1 text-slate-400">←</button>
+          <button class="px-2 py-1 text-sky-700 font-medium">1</button>
+          <button class="px-2 py-1 text-slate-500 hover:text-slate-900">2</button>
+          <button class="px-2 py-1 text-slate-500 hover:text-slate-900">3</button>
+          <span class="px-2 py-1 text-slate-400">…</span>
+          <button class="px-2 py-1 text-slate-500 hover:text-slate-900">22</button>
+          <button class="px-2 py-1 text-slate-500 hover:text-slate-900">→</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-5 bg-sky-50 border border-sky-200 rounded-lg p-4 text-sm text-sky-900">
+      <strong>Importação inicial:</strong> 220 substâncias foram importadas do sistema legado Duo Brasil. Após limpeza automática (deduplicação, normalização de grafia, remoção de placeholders) restaram 170 itens únicos. Os campos descritivos foram pré-preenchidos com base em literatura e aguardam revisão clínica.
+    </div>
+  </main>
+</body>
+</html>

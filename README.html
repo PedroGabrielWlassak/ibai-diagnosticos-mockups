@@ -9,7 +9,7 @@
 <style>body{font-family:'Inter',ui-sans-serif,system-ui}</style>
 </head>
 <body class="min-h-screen bg-slate-50 px-6 py-12">
-  <div class="max-w-3xl mx-auto">
+  <div class="max-w-4xl mx-auto">
 
     <div class="flex items-center gap-3 mb-2">
       <div class="w-11 h-11 rounded-xl bg-sky-600 flex items-center justify-center">
@@ -17,7 +17,7 @@
       </div>
       <div>
         <div class="text-xl font-bold text-slate-900">IBAI Diagnósticos</div>
-        <div class="text-xs font-medium text-sky-600 tracking-widest uppercase">Mockups · v2</div>
+        <div class="text-xs font-medium text-sky-600 tracking-widest uppercase">Mockups · v3</div>
       </div>
     </div>
 
@@ -28,86 +28,113 @@
     </p>
 
     <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 text-sm text-emerald-900 mb-3">
-      <strong>v2 — ajustes a partir da análise do sistema Duo Test (atual):</strong>
+      <strong>v3 — preparando V1 Web completo (trilha A, sem Patch):</strong>
       <ul class="text-xs mt-2 space-y-1 list-disc list-inside">
-        <li>Marcação de <strong>Pseudópode</strong> (eleva grau para ++++) e <strong>Dermatografismo</strong> (invalida o item como XXXX).</li>
-        <li>Coassinatura <strong>médico + enfermeira</strong> (Nome + COREN) na personalização.</li>
-        <li>Conceito de <strong>"Modelo de laudo"</strong> (não "bateria") — agrupa substâncias + fornecedor + tipo de aplicador + texto padrão. Nova tela <em>Meus modelos</em>.</li>
-        <li><strong>Fornecedor de extrato</strong> e <strong>Tipo de aplicador</strong> (Multi-Test PC / Duotip-Test II / Unitest PC) no PDF.</li>
-        <li>Botão <strong>Modificar</strong> após o laudo gerado.</li>
-        <li>Botões <strong>+/−</strong> ao lado do campo de mm para incremento rápido.</li>
+        <li>Novas telas de <strong>cadastro público</strong> e <strong>MFA TOTP</strong> (obrigatório por LGPD).</li>
+        <li>Novo <strong>backoffice admin IBAI</strong> com sidebar diferenciada (escura) — CRUD de substâncias, com status de revisão clínica e import do Duo Test.</li>
+        <li>Tela <strong>Meus dados / privacidade</strong> com exportação, exclusão de paciente, anonimização e zona-perigo de exclusão de conta.</li>
+        <li>Catálogo agora declara explicitamente: 220 itens importados do Duo → 170 únicos após limpeza.</li>
       </ul>
     </div>
 
     <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-900 mb-8">
-      <strong>Escopo desta fase:</strong> apenas <strong>Prick Test</strong>. O card Patch Test aparece marcado como <em>"Em breve"</em> e será desenvolvido em uma próxima fase, sobre a mesma arquitetura.
+      <strong>Escopo desta fase:</strong> apenas <strong>Prick Test</strong>. Patch Test aparece marcado como <em>"Em breve"</em> e será desenvolvido em uma próxima fase, sobre a mesma arquitetura.
       <br><br>
       Cabeçalho, rodapé e assinatura no laudo estão representados por <em>placeholders pontilhados</em>. Na versão real, são imagens JPG enviadas pelo médico.
     </div>
 
+    <!-- Fluxo do médico -->
+    <h2 class="text-base font-semibold text-slate-900 mb-3 mt-8">Fluxo do médico</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <a href="signup.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
+        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">1 · Cadastro</div>
+        <div class="font-semibold text-slate-900 mt-1">Signup público</div>
+        <div class="text-xs text-slate-500 mt-1">Nome, CRM, RQE, especialidade, senha forte, aceite de termos</div>
+      </a>
+      <a href="mfa-setup.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
+        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">2 · MFA obrigatório</div>
+        <div class="font-semibold text-slate-900 mt-1">Configurar 2FA TOTP</div>
+        <div class="text-xs text-slate-500 mt-1">QR code para Google Authenticator / Authy + 8 códigos de backup</div>
+      </a>
       <a href="index.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
-        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">1 · Acesso</div>
+        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">3 · Acesso</div>
         <div class="font-semibold text-slate-900 mt-1">Login</div>
         <div class="text-xs text-slate-500 mt-1">Tela de entrada do médico</div>
       </a>
       <a href="novo-laudo.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
-        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">2 · Início</div>
+        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">4 · Início</div>
         <div class="font-semibold text-slate-900 mt-1">Novo laudo</div>
         <div class="text-xs text-slate-500 mt-1">Escolha de tipo (Patch "Em breve") + dados do paciente</div>
       </a>
       <a href="bateria.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
-        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">3 · Modelo</div>
+        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">5 · Modelo</div>
         <div class="font-semibold text-slate-900 mt-1">Seleção de modelo de laudo</div>
         <div class="text-xs text-slate-500 mt-1">Modelos IBAI oficiais ou do médico</div>
       </a>
       <a href="resultados-prick.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
-        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">4 · Registro</div>
+        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">6 · Registro</div>
         <div class="font-semibold text-slate-900 mt-1">Resultados — Prick Test</div>
         <div class="text-xs text-slate-500 mt-1">UI anatômica + Pseudópode + Dermatografismo</div>
       </a>
       <a href="laudo-preview.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
-        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">5 · Entrega</div>
+        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">7 · Entrega</div>
         <div class="font-semibold text-slate-900 mt-1">Pré-visualização do laudo</div>
         <div class="text-xs text-slate-500 mt-1">PDF com dupla assinatura + orientações dos positivos</div>
       </a>
       <a href="historico.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
-        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">6 · Gestão</div>
+        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">8 · Gestão</div>
         <div class="font-semibold text-slate-900 mt-1">Histórico</div>
         <div class="text-xs text-slate-500 mt-1">Lista com filtros + botão Modificar</div>
       </a>
       <a href="modelos.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
-        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">7 · Modelos</div>
+        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">9 · Modelos</div>
         <div class="font-semibold text-slate-900 mt-1">Meus modelos</div>
         <div class="text-xs text-slate-500 mt-1">Lista de modelos (oficiais IBAI e do médico)</div>
       </a>
       <a href="modelo-editor.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
-        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">8 · Editor</div>
+        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">10 · Editor</div>
         <div class="font-semibold text-slate-900 mt-1">Criar / editar modelo</div>
         <div class="text-xs text-slate-500 mt-1">Form com baterias, substâncias por slot e pré-visualização anatômica</div>
       </a>
-      <a href="personalizacao.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition sm:col-span-2">
-        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">9 · Configuração</div>
+      <a href="personalizacao.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
+        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">11 · Configuração</div>
         <div class="font-semibold text-slate-900 mt-1">Personalização</div>
         <div class="text-xs text-slate-500 mt-1">Médico, enfermeira/COREN, cabeçalho, rodapé, assinatura, texto padrão</div>
+      </a>
+      <a href="lgpd.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
+        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">12 · Privacidade</div>
+        <div class="font-semibold text-slate-900 mt-1">Meus dados / LGPD</div>
+        <div class="text-xs text-slate-500 mt-1">Exportação, exclusão de paciente, histórico, política e termos</div>
+      </a>
+    </div>
+
+    <!-- Admin IBAI -->
+    <h2 class="text-base font-semibold text-slate-900 mb-3 mt-10">Backoffice IBAI (admin)</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <a href="admin-substancias.html" class="block bg-slate-900 hover:bg-slate-800 border border-slate-900 rounded-xl p-5 transition">
+        <div class="text-xs text-sky-400 font-semibold tracking-wide uppercase">Admin · Catálogo</div>
+        <div class="font-semibold text-white mt-1">Substâncias</div>
+        <div class="text-xs text-slate-400 mt-1">CRUD do catálogo global · status de revisão clínica · import Duo</div>
       </a>
     </div>
 
     <div class="mt-10 bg-white border border-slate-200 rounded-xl p-5 text-sm text-slate-600">
       <div class="font-semibold text-slate-900 mb-1">O que evoluiu em relação ao Duo Test (sistema atual)</div>
       <ul class="text-xs list-disc list-inside space-y-1">
-        <li>Catálogo de substâncias com campos descritivos (% concentração, veículo, onde é encontrada, reação cruzada, observações).</li>
+        <li>Cadastro público multi-médico (Duo é monousuário).</li>
+        <li>MFA TOTP obrigatório (Duo só tem senha).</li>
+        <li>Catálogo limpo com campos descritivos (Duo é só nomes).</li>
         <li>Página 2 automática do laudo com orientações <strong>só dos positivos</strong>.</li>
         <li>UI anatômica de marcação no antebraço.</li>
         <li>Envio do laudo por e-mail (médico + paciente).</li>
-        <li>Cabeçalho e rodapé independentes (não só "logo").</li>
-        <li>Histórico com filtros por modelo, período e status; busca por nome.</li>
-        <li>Auditoria/LGPD: registro de emissão, envio e abertura.</li>
+        <li>Cabeçalho, rodapé e assinatura independentes (Duo só tem logo).</li>
+        <li>Histórico com filtros por modelo, período e status.</li>
+        <li>LGPD UI completa: exportação, anonimização, audit log.</li>
         <li>Arquitetura preparada para apps iOS/Android e novos tipos de teste (Patch em breve).</li>
       </ul>
     </div>
 
-    <p class="text-center text-xs text-slate-400 mt-8">© IBAI Diagnósticos · Mockup HTML estático · v2 · Maio 2026</p>
+    <p class="text-center text-xs text-slate-400 mt-8">© IBAI Diagnósticos · Mockup HTML estático · v3 · Maio 2026</p>
   </div>
 </body>
 </html>
