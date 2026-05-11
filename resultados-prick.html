@@ -10,6 +10,9 @@
 body{font-family:'Inter',ui-sans-serif,system-ui}
 .point{cursor:pointer;transition:transform .15s}
 .point:hover{transform:scale(1.15)}
+.mm-input{width:54px}
+.step-btn{width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;border:1px solid #cbd5e1;border-radius:6px;color:#475569;background:#fff;font-size:13px;line-height:1}
+.step-btn:hover{background:#f1f5f9}
 </style>
 </head>
 <body class="min-h-screen bg-slate-50">
@@ -27,7 +30,7 @@ body{font-family:'Inter',ui-sans-serif,system-ui}
     <nav class="flex-1 p-3 text-sm">
       <a href="novo-laudo.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-sky-50 text-sky-700 font-medium mb-1">Novo laudo</a>
       <a href="historico.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 mb-1">Histórico</a>
-      <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 mb-1">Minhas baterias</a>
+      <a href="modelos.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 mb-1">Meus modelos</a>
       <a href="personalizacao.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50">Personalização</a>
     </nav>
     <div class="p-3 border-t border-slate-100">
@@ -42,7 +45,7 @@ body{font-family:'Inter',ui-sans-serif,system-ui}
   </aside>
 
   <main class="ml-64 p-8">
-    <div class="mb-6">
+    <div class="mb-5">
       <div class="flex items-center gap-2 text-xs text-slate-500 mb-1">
         <span>Passo 3 de 3</span>
         <span>·</span>
@@ -51,102 +54,148 @@ body{font-family:'Inter',ui-sans-serif,system-ui}
         <span>Mariana Silva Oliveira · 32 anos</span>
       </div>
       <h1 class="text-2xl font-semibold text-slate-900">Registro de resultados</h1>
-      <p class="text-sm text-slate-500 mt-1">Clique em cada ponto do antebraço e informe o diâmetro da pápula em mm. O grau (cruzes) é calculado automaticamente.</p>
+      <p class="text-sm text-slate-500 mt-1">Informe a pápula em mm. Marque <strong>Pseudópode</strong> para reações com projeções irregulares e <strong>Dermatografismo</strong> para invalidar o item.</p>
+    </div>
+
+    <!-- Resumo do modelo aplicado -->
+    <div class="bg-white border border-slate-200 rounded-lg px-4 py-3 mb-5 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs">
+      <div><span class="text-slate-500">Modelo:</span> <span class="text-slate-900 font-medium">Painel Rinite — 16 alérgenos</span></div>
+      <div><span class="text-slate-500">Aplicador:</span> <span class="text-slate-900 font-medium">Multi-Test PC</span></div>
+      <div><span class="text-slate-500">Baterias:</span> <span class="text-slate-900 font-medium">A · B</span></div>
+      <div><span class="text-slate-500">Extrato:</span> <span class="text-slate-900 font-medium">FDA/Immunotech</span></div>
+      <div><span class="text-slate-500">Enfermeira:</span> <span class="text-slate-900 font-medium">Carla Souza · COREN-SP 567.890</span></div>
     </div>
 
     <div class="grid grid-cols-12 gap-6">
 
       <!-- Coluna esquerda: braço anatômico -->
-      <div class="col-span-5">
-        <div class="bg-white border border-slate-200 rounded-xl p-6 sticky top-6">
-          <div class="flex items-center justify-between mb-4">
+      <div class="col-span-4">
+        <div class="bg-white border border-slate-200 rounded-xl p-5 sticky top-6">
+          <div class="flex items-center justify-between mb-3">
             <h2 class="text-sm font-semibold text-slate-900">Antebraço esquerdo</h2>
-            <button class="text-xs text-sky-600 hover:text-sky-700">Trocar para direito</button>
+            <button class="text-xs text-sky-600 hover:text-sky-700">Trocar lado</button>
           </div>
 
           <svg viewBox="0 0 240 460" class="w-full">
-            <!-- Braço -->
             <path d="M 80 20 Q 70 60 75 120 L 70 240 Q 65 320 78 400 Q 85 440 105 445 L 135 445 Q 155 440 162 400 Q 175 320 170 240 L 165 120 Q 170 60 160 20 Z" fill="#fef3e7" stroke="#e0c9a8" stroke-width="2"/>
-            <!-- Linha do braço -->
             <line x1="120" y1="40" x2="120" y2="430" stroke="#e0c9a8" stroke-width="1" stroke-dasharray="3 4"/>
 
-            <!-- Pontos numerados — 16 alérgenos -->
-            <!-- linha 1 -->
-            <g class="point"><circle cx="100" cy="80" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="100" y="84" text-anchor="middle" font-size="11" fill="white" font-weight="600">1</text></g>
-            <g class="point"><circle cx="140" cy="80" r="11" fill="#ef4444" stroke="white" stroke-width="2"/><text x="140" y="84" text-anchor="middle" font-size="11" fill="white" font-weight="600">2</text></g>
-            <!-- 2 -->
+            <!-- BATERIA A (8 pontos) -->
+            <g class="point"><circle cx="100" cy="80" r="11" fill="#0ea5e9" stroke="white" stroke-width="2"/><text x="100" y="84" text-anchor="middle" font-size="10" fill="white" font-weight="600">H+</text></g>
+            <g class="point"><circle cx="140" cy="80" r="11" fill="#64748b" stroke="white" stroke-width="2"/><text x="140" y="84" text-anchor="middle" font-size="10" fill="white" font-weight="600">S−</text></g>
             <g class="point"><circle cx="100" cy="115" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="100" y="119" text-anchor="middle" font-size="11" fill="white" font-weight="600">3</text></g>
             <g class="point"><circle cx="140" cy="115" r="11" fill="#ef4444" stroke="white" stroke-width="2"/><text x="140" y="119" text-anchor="middle" font-size="11" fill="white" font-weight="600">4</text></g>
-            <!-- 3 -->
             <g class="point"><circle cx="100" cy="150" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="100" y="154" text-anchor="middle" font-size="11" fill="white" font-weight="600">5</text></g>
             <g class="point"><circle cx="140" cy="150" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="140" y="154" text-anchor="middle" font-size="11" fill="white" font-weight="600">6</text></g>
-            <!-- 4 -->
             <g class="point"><circle cx="100" cy="185" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="100" y="189" text-anchor="middle" font-size="11" fill="white" font-weight="600">7</text></g>
-            <g class="point"><circle cx="140" cy="185" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="140" y="189" text-anchor="middle" font-size="11" fill="white" font-weight="600">8</text></g>
-            <!-- 5 -->
-            <g class="point"><circle cx="100" cy="220" r="11" fill="#ef4444" stroke="white" stroke-width="2"/><text x="100" y="224" text-anchor="middle" font-size="11" fill="white" font-weight="600">9</text></g>
-            <g class="point"><circle cx="140" cy="220" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="140" y="224" text-anchor="middle" font-size="11" fill="white" font-weight="600">10</text></g>
-            <!-- 6 -->
-            <g class="point"><circle cx="100" cy="255" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="100" y="259" text-anchor="middle" font-size="11" fill="white" font-weight="600">11</text></g>
-            <g class="point"><circle cx="140" cy="255" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="140" y="259" text-anchor="middle" font-size="11" fill="white" font-weight="600">12</text></g>
-            <!-- 7 -->
-            <g class="point"><circle cx="100" cy="290" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="100" y="294" text-anchor="middle" font-size="11" fill="white" font-weight="600">13</text></g>
-            <g class="point"><circle cx="140" cy="290" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="140" y="294" text-anchor="middle" font-size="11" fill="white" font-weight="600">14</text></g>
-            <!-- Controles -->
-            <g class="point"><circle cx="100" cy="350" r="11" fill="#0ea5e9" stroke="white" stroke-width="2"/><text x="100" y="354" text-anchor="middle" font-size="10" fill="white" font-weight="600">H+</text></g>
-            <g class="point"><circle cx="140" cy="350" r="11" fill="#64748b" stroke="white" stroke-width="2"/><text x="140" y="354" text-anchor="middle" font-size="10" fill="white" font-weight="600">S−</text></g>
+            <g class="point"><circle cx="140" cy="185" r="11" fill="#ef4444" stroke="white" stroke-width="2"/><text x="140" y="189" text-anchor="middle" font-size="11" fill="white" font-weight="600">8</text></g>
+
+            <!-- Separador A/B -->
+            <line x1="80" y1="220" x2="160" y2="220" stroke="#94a3b8" stroke-dasharray="2 3"/>
+            <text x="120" y="232" text-anchor="middle" font-size="9" fill="#64748b" font-weight="600">— bateria A | B —</text>
+
+            <!-- BATERIA B (8 pontos) -->
+            <g class="point"><circle cx="100" cy="255" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="100" y="259" text-anchor="middle" font-size="11" fill="white" font-weight="600">9</text></g>
+            <g class="point"><circle cx="140" cy="255" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="140" y="259" text-anchor="middle" font-size="11" fill="white" font-weight="600">10</text></g>
+            <g class="point"><circle cx="100" cy="290" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="100" y="294" text-anchor="middle" font-size="11" fill="white" font-weight="600">11</text></g>
+            <g class="point"><circle cx="140" cy="290" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="140" y="294" text-anchor="middle" font-size="11" fill="white" font-weight="600">12</text></g>
+            <g class="point"><circle cx="100" cy="325" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="100" y="329" text-anchor="middle" font-size="11" fill="white" font-weight="600">13</text></g>
+            <g class="point"><circle cx="140" cy="325" r="11" fill="#ef4444" stroke="white" stroke-width="2"/><text x="140" y="329" text-anchor="middle" font-size="11" fill="white" font-weight="600">14</text></g>
+            <g class="point"><circle cx="100" cy="360" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="100" y="364" text-anchor="middle" font-size="11" fill="white" font-weight="600">15</text></g>
+            <g class="point"><circle cx="140" cy="360" r="11" fill="#10b981" stroke="white" stroke-width="2"/><text x="140" y="364" text-anchor="middle" font-size="11" fill="white" font-weight="600">16</text></g>
           </svg>
 
-          <div class="flex items-center justify-center gap-4 mt-4 text-xs">
-            <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span><span class="text-slate-600">Negativo</span></div>
-            <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-red-500"></span><span class="text-slate-600">Positivo</span></div>
-            <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-sky-500"></span><span class="text-slate-600">Histamina</span></div>
-            <div class="flex items-center gap-1.5"><span class="w-2.5 h-2.5 rounded-full bg-slate-500"></span><span class="text-slate-600">Salina</span></div>
+          <div class="flex items-center justify-center flex-wrap gap-x-3 gap-y-1.5 mt-3 text-[11px]">
+            <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span><span class="text-slate-600">Negativo</span></div>
+            <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-red-500"></span><span class="text-slate-600">Positivo</span></div>
+            <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-sky-500"></span><span class="text-slate-600">Histamina</span></div>
+            <div class="flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-slate-500"></span><span class="text-slate-600">Salina</span></div>
           </div>
         </div>
       </div>
 
-      <!-- Coluna direita: tabela de medidas -->
-      <div class="col-span-7">
-        <div class="bg-white border border-slate-200 rounded-xl">
-          <div class="px-5 py-4 border-b border-slate-100 flex items-center justify-between">
-            <h2 class="text-sm font-semibold text-slate-900">Medidas das pápulas</h2>
+      <!-- Coluna direita: tabela -->
+      <div class="col-span-8">
+        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
+          <div class="px-5 py-3 border-b border-slate-100 flex items-center justify-between">
+            <h2 class="text-sm font-semibold text-slate-900">Medidas e leitura clínica</h2>
             <div class="text-xs text-slate-500">14 alérgenos · 2 controles</div>
           </div>
           <table class="w-full text-sm">
             <thead>
               <tr class="text-left text-xs font-medium text-slate-500 bg-slate-50 border-b border-slate-100">
-                <th class="px-5 py-2 w-10">#</th>
+                <th class="px-4 py-2 w-8">#</th>
                 <th class="px-2 py-2">Substância</th>
-                <th class="px-2 py-2 w-24">Pápula (mm)</th>
-                <th class="px-2 py-2 w-24">Grau</th>
+                <th class="px-2 py-2 w-32">Pápula (mm)</th>
+                <th class="px-2 py-2 w-20 text-center" title="Marca se houver projeções irregulares — eleva o resultado para ++++">Pseudópode</th>
+                <th class="px-2 py-2 w-20 text-center" title="Reação inespecífica da pele — invalida o item">Dermat.</th>
+                <th class="px-2 py-2 w-16 text-center">Grau</th>
                 <th class="px-2 py-2 w-24">Resultado</th>
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-100">
-              <tr><td class="px-5 py-2.5 text-slate-400 text-xs">1</td><td class="px-2 py-2.5 text-slate-700">D. pteronyssinus</td><td class="px-2"><input type="number" value="2" class="w-16 px-2 py-1 border border-slate-200 rounded"></td><td class="px-2"><span class="text-slate-500 text-xs">0</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
-              <tr><td class="px-5 py-2.5 text-slate-400 text-xs">2</td><td class="px-2 py-2.5 text-slate-700 font-medium">D. farinae</td><td class="px-2"><input type="number" value="6" class="w-16 px-2 py-1 border border-slate-200 rounded bg-red-50 border-red-200"></td><td class="px-2"><span class="text-red-700 text-xs font-semibold">++</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-red-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>Positivo</span></td></tr>
-              <tr><td class="px-5 py-2.5 text-slate-400 text-xs">3</td><td class="px-2 py-2.5 text-slate-700">Blomia tropicalis</td><td class="px-2"><input type="number" value="2" class="w-16 px-2 py-1 border border-slate-200 rounded"></td><td class="px-2"><span class="text-slate-500 text-xs">0</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
-              <tr><td class="px-5 py-2.5 text-slate-400 text-xs">4</td><td class="px-2 py-2.5 text-slate-700 font-medium">Epitélio de gato</td><td class="px-2"><input type="number" value="8" class="w-16 px-2 py-1 border border-slate-200 rounded bg-red-50 border-red-200"></td><td class="px-2"><span class="text-red-700 text-xs font-semibold">+++</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-red-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>Positivo</span></td></tr>
-              <tr><td class="px-5 py-2.5 text-slate-400 text-xs">5</td><td class="px-2 py-2.5 text-slate-700">Epitélio de cão</td><td class="px-2"><input type="number" value="2" class="w-16 px-2 py-1 border border-slate-200 rounded"></td><td class="px-2"><span class="text-slate-500 text-xs">0</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
-              <tr><td class="px-5 py-2.5 text-slate-400 text-xs">6</td><td class="px-2 py-2.5 text-slate-700">Alternaria</td><td class="px-2"><input type="number" value="1" class="w-16 px-2 py-1 border border-slate-200 rounded"></td><td class="px-2"><span class="text-slate-500 text-xs">0</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
-              <tr><td class="px-5 py-2.5 text-slate-400 text-xs">7</td><td class="px-2 py-2.5 text-slate-700">Aspergillus</td><td class="px-2"><input type="number" value="2" class="w-16 px-2 py-1 border border-slate-200 rounded"></td><td class="px-2"><span class="text-slate-500 text-xs">0</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
-              <tr><td class="px-5 py-2.5 text-slate-400 text-xs">8</td><td class="px-2 py-2.5 text-slate-700">Penicillium</td><td class="px-2"><input type="number" value="1" class="w-16 px-2 py-1 border border-slate-200 rounded"></td><td class="px-2"><span class="text-slate-500 text-xs">0</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
-              <tr class="bg-slate-50/60"><td class="px-5 py-2.5 text-slate-400 text-xs">9</td><td class="px-2 py-2.5 text-slate-700 font-medium">Mix gramíneas</td><td class="px-2"><input type="number" value="11" class="w-16 px-2 py-1 border border-slate-200 rounded bg-red-50 border-red-200"></td><td class="px-2"><span class="text-red-700 text-xs font-semibold">++++</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-red-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>Positivo</span></td></tr>
-              <tr><td class="px-5 py-2.5 text-slate-400 text-xs">10</td><td class="px-2 py-2.5 text-slate-700">Lolium perenne</td><td class="px-2"><input type="number" value="2" class="w-16 px-2 py-1 border border-slate-200 rounded"></td><td class="px-2"><span class="text-slate-500 text-xs">0</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
-              <tr><td class="px-5 py-2.5 text-slate-400 text-xs">11</td><td class="px-2 py-2.5 text-slate-700">Mix árvores</td><td class="px-2"><input type="number" value="1" class="w-16 px-2 py-1 border border-slate-200 rounded"></td><td class="px-2"><span class="text-slate-500 text-xs">0</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
-              <tr><td class="px-5 py-2.5 text-slate-400 text-xs">12</td><td class="px-2 py-2.5 text-slate-700">Ambrosia</td><td class="px-2"><input type="number" value="2" class="w-16 px-2 py-1 border border-slate-200 rounded"></td><td class="px-2"><span class="text-slate-500 text-xs">0</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
-              <tr><td class="px-5 py-2.5 text-slate-400 text-xs">13</td><td class="px-2 py-2.5 text-slate-700">Periplaneta</td><td class="px-2"><input type="number" value="1" class="w-16 px-2 py-1 border border-slate-200 rounded"></td><td class="px-2"><span class="text-slate-500 text-xs">0</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
-              <tr><td class="px-5 py-2.5 text-slate-400 text-xs">14</td><td class="px-2 py-2.5 text-slate-700">Blattella germanica</td><td class="px-2"><input type="number" value="2" class="w-16 px-2 py-1 border border-slate-200 rounded"></td><td class="px-2"><span class="text-slate-500 text-xs">0</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
-              <tr class="bg-sky-50/50"><td class="px-5 py-2.5 text-sky-700 text-xs font-semibold">H+</td><td class="px-2 py-2.5 text-slate-700 font-medium">Histamina (controle positivo)</td><td class="px-2"><input type="number" value="6" class="w-16 px-2 py-1 border border-slate-200 rounded"></td><td class="px-2"><span class="text-slate-500 text-xs">—</span></td><td class="px-2"><span class="text-xs text-sky-700">Válido</span></td></tr>
-              <tr class="bg-slate-50/50"><td class="px-5 py-2.5 text-slate-600 text-xs font-semibold">S−</td><td class="px-2 py-2.5 text-slate-700 font-medium">Salina (controle negativo)</td><td class="px-2"><input type="number" value="0" class="w-16 px-2 py-1 border border-slate-200 rounded"></td><td class="px-2"><span class="text-slate-500 text-xs">—</span></td><td class="px-2"><span class="text-xs text-slate-600">Válido</span></td></tr>
+
+              <tr class="bg-sky-50/40">
+                <td class="px-4 py-2 text-sky-700 text-xs font-semibold">H+</td>
+                <td class="px-2 text-slate-700 font-medium">Histamina <span class="text-[10px] text-slate-500 font-normal">(controle +)</span></td>
+                <td class="px-2"><div class="flex items-center gap-1"><button class="step-btn">−</button><input type="number" value="6" class="mm-input px-2 py-1 border border-slate-200 rounded text-center"><button class="step-btn">+</button></div></td>
+                <td class="px-2 text-center text-slate-300">—</td>
+                <td class="px-2 text-center text-slate-300">—</td>
+                <td class="px-2 text-center text-slate-500 text-xs">—</td>
+                <td class="px-2"><span class="text-xs text-sky-700 font-medium">Válido</span></td>
+              </tr>
+
+              <tr class="bg-slate-50/40">
+                <td class="px-4 py-2 text-slate-600 text-xs font-semibold">S−</td>
+                <td class="px-2 text-slate-700 font-medium">Salina <span class="text-[10px] text-slate-500 font-normal">(controle −)</span></td>
+                <td class="px-2"><div class="flex items-center gap-1"><button class="step-btn">−</button><input type="number" value="0" class="mm-input px-2 py-1 border border-slate-200 rounded text-center"><button class="step-btn">+</button></div></td>
+                <td class="px-2 text-center text-slate-300">—</td>
+                <td class="px-2 text-center text-slate-300">—</td>
+                <td class="px-2 text-center text-slate-500 text-xs">—</td>
+                <td class="px-2"><span class="text-xs text-slate-600">Válido</span></td>
+              </tr>
+
+              <tr><td class="px-4 py-2 text-slate-400 text-xs">1</td><td class="px-2 text-slate-700">D. pteronyssinus</td><td class="px-2"><div class="flex items-center gap-1"><button class="step-btn">−</button><input type="number" value="2" class="mm-input px-2 py-1 border border-slate-200 rounded text-center"><button class="step-btn">+</button></div></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center text-slate-500 text-xs">0</td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
+
+              <tr class="bg-red-50/30"><td class="px-4 py-2 text-slate-400 text-xs">2</td><td class="px-2 text-slate-700 font-medium">D. farinae</td><td class="px-2"><div class="flex items-center gap-1"><button class="step-btn">−</button><input type="number" value="6" class="mm-input px-2 py-1 border border-red-200 bg-red-50 rounded text-center"><button class="step-btn">+</button></div></td><td class="px-2 text-center"><input type="checkbox" checked class="rounded border-slate-300 accent-red-600"></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center"><span class="text-red-700 text-xs font-bold">++++<span class="text-[9px] font-normal ml-0.5" title="Pseudópode eleva automaticamente para ++++">↑</span></span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-red-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>Positivo</span></td></tr>
+
+              <tr><td class="px-4 py-2 text-slate-400 text-xs">3</td><td class="px-2 text-slate-700">Blomia tropicalis</td><td class="px-2"><div class="flex items-center gap-1"><button class="step-btn">−</button><input type="number" value="2" class="mm-input px-2 py-1 border border-slate-200 rounded text-center"><button class="step-btn">+</button></div></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center text-slate-500 text-xs">0</td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
+
+              <tr class="bg-red-50/30"><td class="px-4 py-2 text-slate-400 text-xs">4</td><td class="px-2 text-slate-700 font-medium">Epitélio de gato</td><td class="px-2"><div class="flex items-center gap-1"><button class="step-btn">−</button><input type="number" value="8" class="mm-input px-2 py-1 border border-red-200 bg-red-50 rounded text-center"><button class="step-btn">+</button></div></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center"><span class="text-red-700 text-xs font-bold">+++</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-red-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>Positivo</span></td></tr>
+
+              <tr><td class="px-4 py-2 text-slate-400 text-xs">5</td><td class="px-2 text-slate-700">Epitélio de cão</td><td class="px-2"><div class="flex items-center gap-1"><button class="step-btn">−</button><input type="number" value="2" class="mm-input px-2 py-1 border border-slate-200 rounded text-center"><button class="step-btn">+</button></div></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center text-slate-500 text-xs">0</td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
+
+              <tr><td class="px-4 py-2 text-slate-400 text-xs">6</td><td class="px-2 text-slate-700">Alternaria</td><td class="px-2"><div class="flex items-center gap-1"><button class="step-btn">−</button><input type="number" value="1" class="mm-input px-2 py-1 border border-slate-200 rounded text-center"><button class="step-btn">+</button></div></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center text-slate-500 text-xs">0</td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
+
+              <tr><td class="px-4 py-2 text-slate-400 text-xs">7</td><td class="px-2 text-slate-700">Aspergillus</td><td class="px-2"><div class="flex items-center gap-1"><button class="step-btn">−</button><input type="number" value="2" class="mm-input px-2 py-1 border border-slate-200 rounded text-center"><button class="step-btn">+</button></div></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center text-slate-500 text-xs">0</td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
+
+              <tr><td class="px-4 py-2 text-slate-400 text-xs">8</td><td class="px-2 text-slate-700">Penicillium</td><td class="px-2"><div class="flex items-center gap-1"><button class="step-btn">−</button><input type="number" value="1" class="mm-input px-2 py-1 border border-slate-200 rounded text-center"><button class="step-btn">+</button></div></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center text-slate-500 text-xs">0</td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
+
+              <tr class="bg-red-50/30"><td class="px-4 py-2 text-slate-400 text-xs">9</td><td class="px-2 text-slate-700 font-medium">Mix gramíneas</td><td class="px-2"><div class="flex items-center gap-1"><button class="step-btn">−</button><input type="number" value="11" class="mm-input px-2 py-1 border border-red-200 bg-red-50 rounded text-center"><button class="step-btn">+</button></div></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center"><span class="text-red-700 text-xs font-bold">++++</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-red-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span>Positivo</span></td></tr>
+
+              <tr><td class="px-4 py-2 text-slate-400 text-xs">10</td><td class="px-2 text-slate-700">Lolium perenne</td><td class="px-2"><div class="flex items-center gap-1"><button class="step-btn">−</button><input type="number" value="2" class="mm-input px-2 py-1 border border-slate-200 rounded text-center"><button class="step-btn">+</button></div></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center text-slate-500 text-xs">0</td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
+
+              <tr><td class="px-4 py-2 text-slate-400 text-xs">11</td><td class="px-2 text-slate-700">Mix árvores</td><td class="px-2"><div class="flex items-center gap-1"><button class="step-btn">−</button><input type="number" value="1" class="mm-input px-2 py-1 border border-slate-200 rounded text-center"><button class="step-btn">+</button></div></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center text-slate-500 text-xs">0</td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
+
+              <tr><td class="px-4 py-2 text-slate-400 text-xs">12</td><td class="px-2 text-slate-700">Ambrosia</td><td class="px-2"><div class="flex items-center gap-1"><button class="step-btn">−</button><input type="number" value="2" class="mm-input px-2 py-1 border border-slate-200 rounded text-center"><button class="step-btn">+</button></div></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center text-slate-500 text-xs">0</td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
+
+              <tr class="bg-amber-50/40"><td class="px-4 py-2 text-slate-400 text-xs">13</td><td class="px-2 text-slate-700">Periplaneta</td><td class="px-2"><div class="flex items-center gap-1"><button class="step-btn">−</button><input type="number" value="3" class="mm-input px-2 py-1 border border-slate-200 rounded text-center"><button class="step-btn">+</button></div></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center"><input type="checkbox" checked class="rounded border-slate-300 accent-amber-600"></td><td class="px-2 text-center"><span class="text-amber-700 text-xs font-bold">XXXX</span></td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-amber-700 font-medium" title="Dermatografismo: teste invalidado"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>Inválido</span></td></tr>
+
+              <tr><td class="px-4 py-2 text-slate-400 text-xs">14</td><td class="px-2 text-slate-700">Blattella germanica</td><td class="px-2"><div class="flex items-center gap-1"><button class="step-btn">−</button><input type="number" value="2" class="mm-input px-2 py-1 border border-slate-200 rounded text-center"><button class="step-btn">+</button></div></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center"><input type="checkbox" class="rounded border-slate-300"></td><td class="px-2 text-center text-slate-500 text-xs">0</td><td class="px-2"><span class="inline-flex items-center gap-1 text-xs text-emerald-700 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Negativo</span></td></tr>
+
             </tbody>
           </table>
+
+          <div class="px-5 py-3 bg-slate-50/70 border-t border-slate-100 text-[11px] text-slate-600 space-y-1">
+            <div><strong class="text-slate-700">Critério (cruzes):</strong> 0 (&lt;3 mm) · + (3–4 mm) · ++ (5–6 mm) · +++ (7–10 mm) · ++++ (&gt;10 mm).</div>
+            <div><strong class="text-slate-700">Pseudópode</strong> ✓ eleva automaticamente o grau para <span class="text-red-700 font-semibold">++++</span>.</div>
+            <div><strong class="text-slate-700">Dermatografismo</strong> ✓ invalida o item, marcado como <span class="text-amber-700 font-semibold">XXXX</span> no laudo.</div>
+          </div>
         </div>
 
-        <div class="mt-4 grid grid-cols-3 gap-3 text-xs">
+        <div class="mt-4 grid grid-cols-4 gap-3 text-xs">
           <div class="bg-white border border-slate-200 rounded-lg p-3">
-            <div class="text-slate-500">Total testado</div>
+            <div class="text-slate-500">Total</div>
             <div class="text-lg font-semibold text-slate-900">14</div>
           </div>
           <div class="bg-white border border-red-100 rounded-lg p-3">
@@ -155,7 +204,11 @@ body{font-family:'Inter',ui-sans-serif,system-ui}
           </div>
           <div class="bg-white border border-emerald-100 rounded-lg p-3">
             <div class="text-emerald-600">Negativos</div>
-            <div class="text-lg font-semibold text-emerald-700">11</div>
+            <div class="text-lg font-semibold text-emerald-700">10</div>
+          </div>
+          <div class="bg-white border border-amber-100 rounded-lg p-3">
+            <div class="text-amber-600">Inválidos</div>
+            <div class="text-lg font-semibold text-amber-700">1</div>
           </div>
         </div>
       </div>

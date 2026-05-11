@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>IBAI Diagnósticos — Bateria</title>
+<title>IBAI Diagnósticos — Selecionar modelo</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>body{font-family:'Inter',ui-sans-serif,system-ui}</style>
@@ -23,7 +23,7 @@
     <nav class="flex-1 p-3 text-sm">
       <a href="novo-laudo.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-sky-50 text-sky-700 font-medium mb-1">Novo laudo</a>
       <a href="historico.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 mb-1">Histórico</a>
-      <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 mb-1">Minhas baterias</a>
+      <a href="modelos.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 mb-1">Meus modelos</a>
       <a href="personalizacao.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50">Personalização</a>
     </nav>
     <div class="p-3 border-t border-slate-100">
@@ -48,15 +48,15 @@
         <span>·</span>
         <span>Mariana Silva Oliveira</span>
       </div>
-      <h1 class="text-2xl font-semibold text-slate-900">Selecione a bateria de substâncias</h1>
-      <p class="text-sm text-slate-500 mt-1">Escolha um conjunto pré-pronto ou personalize as substâncias deste laudo.</p>
+      <h1 class="text-2xl font-semibold text-slate-900">Selecione o modelo de laudo</h1>
+      <p class="text-sm text-slate-500 mt-1">Um modelo já traz: substâncias, fornecedor do extrato, tipo de aplicador e texto padrão.</p>
     </div>
 
     <div class="border-b border-slate-200 mb-6">
       <div class="flex gap-6">
-        <button class="px-1 py-3 text-sm font-medium text-sky-700 border-b-2 border-sky-600">Padrão IBAI <span class="ml-1 text-xs text-slate-400 font-normal">2</span></button>
-        <button class="px-1 py-3 text-sm font-medium text-slate-500 hover:text-slate-700">Minhas baterias <span class="ml-1 text-xs text-slate-400 font-normal">3</span></button>
-        <button class="px-1 py-3 text-sm font-medium text-slate-500 hover:text-slate-700">+ Criar nova</button>
+        <button class="px-1 py-3 text-sm font-medium text-sky-700 border-b-2 border-sky-600">Modelos IBAI <span class="ml-1 text-xs text-slate-400 font-normal">2</span></button>
+        <button class="px-1 py-3 text-sm font-medium text-slate-500 hover:text-slate-700">Meus modelos <span class="ml-1 text-xs text-slate-400 font-normal">3</span></button>
+        <a href="modelos.html" class="px-1 py-3 text-sm font-medium text-slate-500 hover:text-slate-700">+ Criar novo modelo</a>
       </div>
     </div>
 
@@ -65,15 +65,20 @@
         <input type="radio" name="bat" checked class="peer sr-only">
         <div class="border-2 border-slate-200 peer-checked:border-sky-600 peer-checked:bg-sky-50/40 rounded-xl p-5 transition">
           <div class="flex items-start justify-between mb-3">
-            <div class="px-2 py-0.5 rounded-md bg-sky-100 text-sky-700 text-[10px] font-semibold tracking-wide uppercase">Padrão IBAI</div>
+            <div class="px-2 py-0.5 rounded-md bg-sky-100 text-sky-700 text-[10px] font-semibold tracking-wide uppercase">Modelo IBAI</div>
             <span class="hidden peer-checked:inline w-5 h-5 rounded-full bg-sky-600 text-white text-xs flex items-center justify-center">✓</span>
           </div>
-          <div class="font-semibold text-slate-900">Painel Rinite (16 alérgenos)</div>
+          <div class="font-semibold text-slate-900">Painel Rinite — 16 alérgenos</div>
           <div class="text-xs text-slate-500 mt-1">Ácaros, fungos, pólens, epitélios, baratas e controles</div>
+          <div class="mt-3 grid grid-cols-2 gap-2 text-[11px]">
+            <div><span class="text-slate-500">Aplicador:</span> <span class="text-slate-800 font-medium">Multi-Test PC</span></div>
+            <div><span class="text-slate-500">Baterias:</span> <span class="text-slate-800 font-medium">A · B</span></div>
+            <div class="col-span-2"><span class="text-slate-500">Extrato:</span> <span class="text-slate-800 font-medium">FDA/Immunotech</span></div>
+          </div>
           <div class="mt-3 flex flex-wrap gap-1">
             <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded">D. pteronyssinus</span>
             <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded">D. farinae</span>
-            <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded">Blomia tropicalis</span>
+            <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded">Blomia</span>
             <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded">Gato</span>
             <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded">+12</span>
           </div>
@@ -84,10 +89,15 @@
         <input type="radio" name="bat" class="peer sr-only">
         <div class="border-2 border-slate-200 peer-checked:border-sky-600 peer-checked:bg-sky-50/40 rounded-xl p-5 transition">
           <div class="flex items-start justify-between mb-3">
-            <div class="px-2 py-0.5 rounded-md bg-sky-100 text-sky-700 text-[10px] font-semibold tracking-wide uppercase">Padrão IBAI</div>
+            <div class="px-2 py-0.5 rounded-md bg-sky-100 text-sky-700 text-[10px] font-semibold tracking-wide uppercase">Modelo IBAI</div>
           </div>
-          <div class="font-semibold text-slate-900">Painel Alimentar (20 alérgenos)</div>
+          <div class="font-semibold text-slate-900">Painel Alimentar — 20 alérgenos</div>
           <div class="text-xs text-slate-500 mt-1">Principais alimentos relacionados a alergias imediatas</div>
+          <div class="mt-3 grid grid-cols-2 gap-2 text-[11px]">
+            <div><span class="text-slate-500">Aplicador:</span> <span class="text-slate-800 font-medium">Multi-Test PC</span></div>
+            <div><span class="text-slate-500">Baterias:</span> <span class="text-slate-800 font-medium">A · B · C</span></div>
+            <div class="col-span-2"><span class="text-slate-500">Extrato:</span> <span class="text-slate-800 font-medium">FDA/Immunotech</span></div>
+          </div>
           <div class="mt-3 flex flex-wrap gap-1">
             <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded">Leite</span>
             <span class="text-[10px] px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded">Ovo</span>
@@ -100,7 +110,7 @@
     </div>
 
     <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6 text-sm text-amber-900">
-      <strong>Dica:</strong> você pode duplicar uma bateria padrão e adaptá-la criando sua própria em <em>Minhas baterias</em>.
+      <strong>Dica:</strong> você pode duplicar um modelo IBAI e adaptá-lo em <a href="modelos.html" class="underline font-medium">Meus modelos</a> — alterando substâncias, fornecedor de extrato, texto padrão, etc.
     </div>
 
     <div class="flex justify-between">

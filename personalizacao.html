@@ -5,8 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>IBAI Diagnósticos — Personalização</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>body{font-family:'Inter',ui-sans-serif,system-ui}</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<style>body{font-family:'Inter',ui-sans-serif,system-ui}
+.sig-font{font-family:'Dancing Script',cursive;font-weight:600}
+</style>
 </head>
 <body class="min-h-screen bg-slate-50">
 
@@ -23,7 +25,7 @@
     <nav class="flex-1 p-3 text-sm">
       <a href="novo-laudo.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 mb-1">Novo laudo</a>
       <a href="historico.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 mb-1">Histórico</a>
-      <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 mb-1">Minhas baterias</a>
+      <a href="modelos.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 mb-1">Meus modelos</a>
       <a href="personalizacao.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-sky-50 text-sky-700 font-medium">Personalização</a>
     </nav>
     <div class="p-3 border-t border-slate-100">
@@ -40,13 +42,13 @@
   <main class="ml-64 p-8 max-w-5xl">
     <div class="mb-6">
       <h1 class="text-2xl font-semibold text-slate-900">Personalização dos laudos</h1>
-      <p class="text-sm text-slate-500 mt-1">As imagens e dados abaixo aparecem em todos os laudos que você emitir.</p>
+      <p class="text-sm text-slate-500 mt-1">Os dados e imagens abaixo aparecem em todos os laudos que você emitir.</p>
     </div>
 
-    <!-- Dados profissionais -->
-    <div class="bg-white border border-slate-200 rounded-xl p-6 mb-6">
-      <h2 class="text-base font-semibold text-slate-900 mb-1">Dados profissionais</h2>
-      <p class="text-xs text-slate-500 mb-5">Aparecem abaixo da assinatura no laudo final.</p>
+    <!-- 1. Dados do médico -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 mb-5">
+      <h2 class="text-base font-semibold text-slate-900 mb-1">1 · Médico responsável</h2>
+      <p class="text-xs text-slate-500 mb-5">Aparece abaixo da assinatura no laudo final.</p>
 
       <div class="grid grid-cols-2 gap-4">
         <div class="col-span-2">
@@ -62,19 +64,38 @@
           <input type="text" value="45.678" class="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500">
         </div>
         <div class="col-span-2">
-          <label class="block text-sm font-medium text-slate-700 mb-1.5">Especialidade / texto após CRM</label>
+          <label class="block text-sm font-medium text-slate-700 mb-1.5">Especialidade / linha abaixo do CRM</label>
           <input type="text" value="Alergia e Imunologia" class="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500">
         </div>
       </div>
     </div>
 
-    <!-- Uploads -->
-    <div class="bg-white border border-slate-200 rounded-xl p-6 mb-6">
-      <h2 class="text-base font-semibold text-slate-900 mb-1">Identidade visual do laudo</h2>
+    <!-- 2. Enfermagem -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 mb-5">
+      <div class="flex items-start justify-between mb-1">
+        <h2 class="text-base font-semibold text-slate-900">2 · Enfermagem (coassinatura)</h2>
+        <span class="text-[10px] px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 font-medium tracking-wide uppercase">Opcional</span>
+      </div>
+      <p class="text-xs text-slate-500 mb-5">Quando preenchido, o nome e o COREN da enfermeira aparecem como coassinatura no laudo. Pode ser deixado em branco se o próprio médico aplica o teste.</p>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1.5">Nome da enfermeira aplicadora</label>
+          <input type="text" value="Carla Souza" class="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-slate-700 mb-1.5">COREN</label>
+          <input type="text" value="COREN-SP 567.890" class="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500">
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Identidade visual -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 mb-5">
+      <h2 class="text-base font-semibold text-slate-900 mb-1">3 · Identidade visual do laudo</h2>
       <p class="text-xs text-slate-500 mb-5">Envie imagens em formato JPG ou PNG. Recomendado: cabeçalho 1200×200 px, rodapé 1200×120 px, assinatura em fundo transparente.</p>
 
       <div class="grid grid-cols-3 gap-4">
-        <!-- Cabeçalho -->
         <div>
           <div class="text-xs font-medium text-slate-700 mb-2">Cabeçalho</div>
           <div class="border-2 border-dashed border-slate-300 rounded-lg aspect-[6/1] flex items-center justify-center bg-slate-50 mb-2 px-4 text-center">
@@ -85,8 +106,6 @@
           </div>
           <button class="w-full text-xs font-medium text-sky-700 bg-sky-50 hover:bg-sky-100 py-2 rounded-md">↑ Substituir</button>
         </div>
-
-        <!-- Rodapé -->
         <div>
           <div class="text-xs font-medium text-slate-700 mb-2">Rodapé</div>
           <div class="border-2 border-dashed border-slate-300 rounded-lg aspect-[6/1] flex items-center justify-center bg-slate-50 mb-2 px-4 text-center">
@@ -94,12 +113,10 @@
           </div>
           <button class="w-full text-xs font-medium text-sky-700 bg-sky-50 hover:bg-sky-100 py-2 rounded-md">↑ Substituir</button>
         </div>
-
-        <!-- Assinatura -->
         <div>
           <div class="text-xs font-medium text-slate-700 mb-2">Assinatura digitalizada</div>
           <div class="border-2 border-dashed border-slate-300 rounded-lg aspect-[6/1] flex items-center justify-center bg-slate-50 mb-2">
-            <div class="font-['cursive'] italic text-slate-700 text-lg">Beatriz Lima</div>
+            <div class="sig-font italic text-slate-700 text-2xl">Beatriz Lima</div>
           </div>
           <button class="w-full text-xs font-medium text-sky-700 bg-sky-50 hover:bg-sky-100 py-2 rounded-md">↑ Substituir</button>
         </div>
@@ -110,7 +127,15 @@
       </div>
     </div>
 
-    <!-- Pré-visualização -->
+    <!-- 4. Texto padrão -->
+    <div class="bg-white border border-slate-200 rounded-xl p-6 mb-5">
+      <h2 class="text-base font-semibold text-slate-900 mb-1">4 · Texto padrão / disclaimer</h2>
+      <p class="text-xs text-slate-500 mb-5">Aparece em itálico no rodapé técnico do laudo, abaixo da legenda das cruzes.</p>
+
+      <textarea rows="3" class="w-full px-3.5 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500">Este resultado somente é válido quando avaliado pelo médico responsável e associado à clínica.</textarea>
+    </div>
+
+    <!-- 5. Pré-visualização -->
     <div class="bg-white border border-slate-200 rounded-xl p-6 mb-6">
       <h2 class="text-base font-semibold text-slate-900 mb-3">Pré-visualização</h2>
       <div class="border border-slate-200 rounded-md p-6 bg-slate-50/50">
@@ -121,14 +146,18 @@
           </div>
           <span class="italic text-slate-400">[ cabeçalho ]</span>
         </div>
-        <div class="text-center text-[11px] text-slate-500 my-6">— corpo do laudo —</div>
-        <div class="flex justify-end mb-3">
+        <div class="text-center text-[11px] text-slate-500 my-5">— corpo do laudo —</div>
+        <div class="grid grid-cols-2 gap-12 my-3">
           <div class="text-center">
-            <div class="font-['cursive'] italic text-slate-700 text-base">Beatriz Lima</div>
-            <div class="border-t border-slate-300 pt-1 mt-1 text-[10px] text-slate-700">Dra. Beatriz Lima — CRM-SP 123.456 · RQE 45.678</div>
+            <div class="sig-font italic text-slate-700 text-lg">Beatriz Lima</div>
+            <div class="border-t border-slate-400 pt-1 mt-1 text-[10px] text-slate-700">Dra. Beatriz Lima — CRM-SP 123.456 · RQE 45.678</div>
+          </div>
+          <div class="text-center">
+            <div class="sig-font italic text-slate-700 text-lg">Carla Souza</div>
+            <div class="border-t border-slate-400 pt-1 mt-1 text-[10px] text-slate-700">Carla Souza — COREN-SP 567.890</div>
           </div>
         </div>
-        <div class="border-2 border-dashed border-slate-300 rounded py-2 px-4 text-[10px] text-slate-500 text-center bg-white">Av. Paulista, 1.234 · São Paulo · SP · (11) 3001-2000</div>
+        <div class="border-2 border-dashed border-slate-300 rounded py-2 px-4 text-[10px] text-slate-500 text-center bg-white mt-3">Av. Paulista, 1.234 · São Paulo · SP · (11) 3001-2000</div>
       </div>
     </div>
 

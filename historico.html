@@ -23,7 +23,7 @@
     <nav class="flex-1 p-3 text-sm">
       <a href="novo-laudo.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 mb-1">Novo laudo</a>
       <a href="historico.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg bg-sky-50 text-sky-700 font-medium mb-1">Histórico</a>
-      <a href="#" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 mb-1">Minhas baterias</a>
+      <a href="modelos.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50 mb-1">Meus modelos</a>
       <a href="personalizacao.html" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-600 hover:bg-slate-50">Personalização</a>
     </nav>
     <div class="p-3 border-t border-slate-100">
@@ -46,16 +46,16 @@
       <a href="novo-laudo.html" class="px-4 py-2.5 bg-sky-600 hover:bg-sky-700 text-white text-sm font-medium rounded-lg shadow-sm">+ Novo laudo</a>
     </div>
 
-    <!-- Filtros -->
     <div class="bg-white border border-slate-200 rounded-xl p-4 mb-4 flex gap-3">
       <div class="flex-1 relative">
         <svg class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3" stroke-linecap="round"/></svg>
         <input type="text" placeholder="Buscar por nome, e-mail ou número do laudo" class="w-full pl-9 pr-3 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/30 focus:border-sky-500">
       </div>
       <select class="px-3 py-2 border border-slate-200 rounded-lg text-sm">
-        <option>Todos os tipos</option>
-        <option>Prick Test</option>
-        <option>Patch Test</option>
+        <option>Todos os modelos</option>
+        <option>Painel Rinite</option>
+        <option>Painel Alimentar</option>
+        <option>Painel Personalizado Dra. Beatriz</option>
       </select>
       <select class="px-3 py-2 border border-slate-200 rounded-lg text-sm">
         <option>Últimos 30 dias</option>
@@ -65,74 +65,73 @@
       </select>
     </div>
 
-    <!-- Lista -->
     <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
       <table class="w-full text-sm">
         <thead>
           <tr class="text-left text-xs font-medium text-slate-500 bg-slate-50 border-b border-slate-100">
             <th class="px-5 py-3">Laudo</th>
             <th class="px-2 py-3">Paciente</th>
-            <th class="px-2 py-3">Tipo</th>
+            <th class="px-2 py-3">Modelo</th>
             <th class="px-2 py-3">Resultado</th>
             <th class="px-2 py-3">Emitido</th>
             <th class="px-2 py-3">Envio</th>
-            <th class="px-2 py-3"></th>
+            <th class="px-2 py-3 text-right">Ações</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-slate-100">
           <tr class="hover:bg-slate-50/50">
             <td class="px-5 py-3 font-medium text-slate-900">#2026-00387</td>
             <td class="px-2 text-slate-700">Mariana Silva Oliveira <div class="text-xs text-slate-400">14/08/1992</div></td>
-            <td class="px-2"><span class="text-xs px-2 py-0.5 rounded bg-sky-100 text-sky-700 font-medium">Prick</span></td>
-            <td class="px-2"><span class="text-xs text-red-700 font-medium">3 positivos</span><div class="text-xs text-slate-400">11 negativos</div></td>
+            <td class="px-2"><div class="text-xs text-slate-700">Painel Rinite</div><div class="text-[10px] text-slate-400">Prick · 14 alérgenos</div></td>
+            <td class="px-2"><span class="text-xs text-red-700 font-medium">3 positivos</span><div class="text-xs text-slate-400">10 negativos · 1 inválido</div></td>
             <td class="px-2 text-slate-600">11/05/2026</td>
             <td class="px-2"><span class="text-xs text-emerald-700 inline-flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>enviado</span></td>
-            <td class="px-2 text-right"><a href="laudo-preview.html" class="text-xs text-sky-600 hover:text-sky-700 font-medium">Abrir →</a></td>
+            <td class="px-2 text-right whitespace-nowrap"><a href="laudo-preview.html" class="text-xs text-sky-600 hover:text-sky-700 font-medium mr-3">Abrir</a><a href="resultados-prick.html" class="text-xs text-slate-600 hover:text-slate-900">Modificar</a></td>
           </tr>
           <tr class="hover:bg-slate-50/50">
             <td class="px-5 py-3 font-medium text-slate-900">#2026-00386</td>
             <td class="px-2 text-slate-700">Pedro Henrique Souza <div class="text-xs text-slate-400">03/01/1985</div></td>
-            <td class="px-2"><span class="text-xs px-2 py-0.5 rounded bg-emerald-100 text-emerald-700 font-medium">Patch</span></td>
-            <td class="px-2"><span class="text-xs text-red-700 font-medium">2 positivos</span><div class="text-xs text-slate-400">28 negativos</div></td>
+            <td class="px-2"><div class="text-xs text-slate-700">Painel Alimentar</div><div class="text-[10px] text-slate-400">Prick · 20 alérgenos</div></td>
+            <td class="px-2"><span class="text-xs text-red-700 font-medium">2 positivos</span><div class="text-xs text-slate-400">18 negativos</div></td>
             <td class="px-2 text-slate-600">10/05/2026</td>
             <td class="px-2"><span class="text-xs text-emerald-700 inline-flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>enviado</span></td>
-            <td class="px-2 text-right"><a href="laudo-preview.html" class="text-xs text-sky-600 hover:text-sky-700 font-medium">Abrir →</a></td>
+            <td class="px-2 text-right whitespace-nowrap"><a href="laudo-preview.html" class="text-xs text-sky-600 hover:text-sky-700 font-medium mr-3">Abrir</a><a href="resultados-prick.html" class="text-xs text-slate-600 hover:text-slate-900">Modificar</a></td>
           </tr>
           <tr class="hover:bg-slate-50/50">
             <td class="px-5 py-3 font-medium text-slate-900">#2026-00385</td>
             <td class="px-2 text-slate-700">Carla Beatriz Andrade <div class="text-xs text-slate-400">22/11/2008</div></td>
-            <td class="px-2"><span class="text-xs px-2 py-0.5 rounded bg-sky-100 text-sky-700 font-medium">Prick</span></td>
+            <td class="px-2"><div class="text-xs text-slate-700">Painel Rinite</div><div class="text-[10px] text-slate-400">Prick · 14 alérgenos</div></td>
             <td class="px-2"><span class="text-xs text-slate-500 font-medium">0 positivos</span><div class="text-xs text-slate-400">14 negativos</div></td>
             <td class="px-2 text-slate-600">10/05/2026</td>
             <td class="px-2"><span class="text-xs text-amber-700 inline-flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>pendente</span></td>
-            <td class="px-2 text-right"><a href="laudo-preview.html" class="text-xs text-sky-600 hover:text-sky-700 font-medium">Abrir →</a></td>
+            <td class="px-2 text-right whitespace-nowrap"><a href="laudo-preview.html" class="text-xs text-sky-600 hover:text-sky-700 font-medium mr-3">Abrir</a><a href="resultados-prick.html" class="text-xs text-slate-600 hover:text-slate-900">Modificar</a></td>
           </tr>
           <tr class="hover:bg-slate-50/50">
             <td class="px-5 py-3 font-medium text-slate-900">#2026-00384</td>
             <td class="px-2 text-slate-700">Luís Felipe Cardoso <div class="text-xs text-slate-400">07/06/1979</div></td>
-            <td class="px-2"><span class="text-xs px-2 py-0.5 rounded bg-emerald-100 text-emerald-700 font-medium">Patch</span></td>
-            <td class="px-2"><span class="text-xs text-red-700 font-medium">5 positivos</span><div class="text-xs text-slate-400">25 negativos</div></td>
+            <td class="px-2"><div class="text-xs text-slate-700">Painel Personalizado Dra. B.</div><div class="text-[10px] text-slate-400">Prick · 24 alérgenos</div></td>
+            <td class="px-2"><span class="text-xs text-red-700 font-medium">5 positivos</span><div class="text-xs text-slate-400">19 negativos</div></td>
             <td class="px-2 text-slate-600">09/05/2026</td>
             <td class="px-2"><span class="text-xs text-emerald-700 inline-flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>enviado</span></td>
-            <td class="px-2 text-right"><a href="laudo-preview.html" class="text-xs text-sky-600 hover:text-sky-700 font-medium">Abrir →</a></td>
+            <td class="px-2 text-right whitespace-nowrap"><a href="laudo-preview.html" class="text-xs text-sky-600 hover:text-sky-700 font-medium mr-3">Abrir</a><a href="resultados-prick.html" class="text-xs text-slate-600 hover:text-slate-900">Modificar</a></td>
           </tr>
           <tr class="hover:bg-slate-50/50">
             <td class="px-5 py-3 font-medium text-slate-900">#2026-00383</td>
             <td class="px-2 text-slate-700">Ana Júlia Pereira <div class="text-xs text-slate-400">15/02/1995</div></td>
-            <td class="px-2"><span class="text-xs px-2 py-0.5 rounded bg-sky-100 text-sky-700 font-medium">Prick</span></td>
+            <td class="px-2"><div class="text-xs text-slate-700">Painel Rinite</div><div class="text-[10px] text-slate-400">Prick · 14 alérgenos</div></td>
             <td class="px-2"><span class="text-xs text-red-700 font-medium">1 positivo</span><div class="text-xs text-slate-400">13 negativos</div></td>
             <td class="px-2 text-slate-600">08/05/2026</td>
             <td class="px-2"><span class="text-xs text-emerald-700 inline-flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>enviado</span></td>
-            <td class="px-2 text-right"><a href="laudo-preview.html" class="text-xs text-sky-600 hover:text-sky-700 font-medium">Abrir →</a></td>
+            <td class="px-2 text-right whitespace-nowrap"><a href="laudo-preview.html" class="text-xs text-sky-600 hover:text-sky-700 font-medium mr-3">Abrir</a><a href="resultados-prick.html" class="text-xs text-slate-600 hover:text-slate-900">Modificar</a></td>
           </tr>
           <tr class="hover:bg-slate-50/50">
             <td class="px-5 py-3 font-medium text-slate-900">#2026-00382</td>
             <td class="px-2 text-slate-700">Roberto Junqueira Lima <div class="text-xs text-slate-400">28/10/1962</div></td>
-            <td class="px-2"><span class="text-xs px-2 py-0.5 rounded bg-emerald-100 text-emerald-700 font-medium">Patch</span></td>
-            <td class="px-2"><span class="text-xs text-red-700 font-medium">3 positivos</span><div class="text-xs text-slate-400">27 negativos</div></td>
+            <td class="px-2"><div class="text-xs text-slate-700">Painel Alimentar</div><div class="text-[10px] text-slate-400">Prick · 20 alérgenos</div></td>
+            <td class="px-2"><span class="text-xs text-red-700 font-medium">3 positivos</span><div class="text-xs text-slate-400">17 negativos</div></td>
             <td class="px-2 text-slate-600">07/05/2026</td>
             <td class="px-2"><span class="text-xs text-slate-500 inline-flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>impresso</span></td>
-            <td class="px-2 text-right"><a href="laudo-preview.html" class="text-xs text-sky-600 hover:text-sky-700 font-medium">Abrir →</a></td>
+            <td class="px-2 text-right whitespace-nowrap"><a href="laudo-preview.html" class="text-xs text-sky-600 hover:text-sky-700 font-medium mr-3">Abrir</a><a href="resultados-prick.html" class="text-xs text-slate-600 hover:text-slate-900">Modificar</a></td>
           </tr>
         </tbody>
       </table>

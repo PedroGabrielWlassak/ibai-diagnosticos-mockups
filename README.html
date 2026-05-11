@@ -17,18 +17,32 @@
       </div>
       <div>
         <div class="text-xl font-bold text-slate-900">IBAI Diagnósticos</div>
-        <div class="text-xs font-medium text-sky-600 tracking-widest uppercase">Mockups · v1</div>
+        <div class="text-xs font-medium text-sky-600 tracking-widest uppercase">Mockups · v2</div>
       </div>
     </div>
 
     <h1 class="text-2xl font-semibold text-slate-900 mt-6">Prévia de telas para validação</h1>
     <p class="text-sm text-slate-600 mt-2 mb-6">
-      Estas são telas estáticas (HTML) para validar o produto antes do desenvolvimento. Os dados são fictícios.
-      Clique nas telas abaixo para navegar pelo fluxo. Não há backend — botões como "Enviar e-mail" são apenas visuais.
+      Telas estáticas (HTML) para validar o produto antes do desenvolvimento. Os dados são fictícios.
+      Clique nos cards abaixo para navegar pelo fluxo — não há backend, então botões como "Enviar e-mail" são apenas visuais.
     </p>
 
+    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 text-sm text-emerald-900 mb-3">
+      <strong>v2 — ajustes a partir da análise do sistema Duo Test (atual):</strong>
+      <ul class="text-xs mt-2 space-y-1 list-disc list-inside">
+        <li>Marcação de <strong>Pseudópode</strong> (eleva grau para ++++) e <strong>Dermatografismo</strong> (invalida o item como XXXX).</li>
+        <li>Coassinatura <strong>médico + enfermeira</strong> (Nome + COREN) na personalização.</li>
+        <li>Conceito de <strong>"Modelo de laudo"</strong> (não "bateria") — agrupa substâncias + fornecedor + tipo de aplicador + texto padrão. Nova tela <em>Meus modelos</em>.</li>
+        <li><strong>Fornecedor de extrato</strong> e <strong>Tipo de aplicador</strong> (Multi-Test PC / Duotip-Test II / Unitest PC) no PDF.</li>
+        <li>Botão <strong>Modificar</strong> após o laudo gerado.</li>
+        <li>Botões <strong>+/−</strong> ao lado do campo de mm para incremento rápido.</li>
+      </ul>
+    </div>
+
     <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm text-amber-900 mb-8">
-      <strong>Observação:</strong> as imagens de cabeçalho, rodapé e assinatura estão representadas por <em>placeholders pontilhados</em>. Na versão real, são imagens JPG enviadas pelo próprio médico.
+      <strong>Escopo desta fase:</strong> apenas <strong>Prick Test</strong>. O card Patch Test aparece marcado como <em>"Em breve"</em> e será desenvolvido em uma próxima fase, sobre a mesma arquitetura.
+      <br><br>
+      Cabeçalho, rodapé e assinatura no laudo estão representados por <em>placeholders pontilhados</em>. Na versão real, são imagens JPG enviadas pelo médico.
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -40,45 +54,55 @@
       <a href="novo-laudo.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
         <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">2 · Início</div>
         <div class="font-semibold text-slate-900 mt-1">Novo laudo</div>
-        <div class="text-xs text-slate-500 mt-1">Escolha do tipo de teste e dados do paciente</div>
+        <div class="text-xs text-slate-500 mt-1">Escolha de tipo (Patch "Em breve") + dados do paciente</div>
       </a>
       <a href="bateria.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
-        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">3 · Bateria</div>
-        <div class="font-semibold text-slate-900 mt-1">Seleção de substâncias</div>
-        <div class="text-xs text-slate-500 mt-1">Baterias padrão IBAI ou personalizadas</div>
+        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">3 · Modelo</div>
+        <div class="font-semibold text-slate-900 mt-1">Seleção de modelo de laudo</div>
+        <div class="text-xs text-slate-500 mt-1">Modelos IBAI oficiais ou do médico</div>
       </a>
       <a href="resultados-prick.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
         <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">4 · Registro</div>
         <div class="font-semibold text-slate-900 mt-1">Resultados — Prick Test</div>
-        <div class="text-xs text-slate-500 mt-1">UI anatômica do antebraço + tabela de medidas</div>
+        <div class="text-xs text-slate-500 mt-1">UI anatômica + Pseudópode + Dermatografismo</div>
       </a>
       <a href="laudo-preview.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
         <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">5 · Entrega</div>
         <div class="font-semibold text-slate-900 mt-1">Pré-visualização do laudo</div>
-        <div class="text-xs text-slate-500 mt-1">Página 1 (resultados) + página 2 (orientações dos positivos)</div>
+        <div class="text-xs text-slate-500 mt-1">PDF com dupla assinatura + orientações dos positivos</div>
       </a>
       <a href="historico.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
         <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">6 · Gestão</div>
         <div class="font-semibold text-slate-900 mt-1">Histórico</div>
-        <div class="text-xs text-slate-500 mt-1">Lista de laudos emitidos com filtros e busca</div>
+        <div class="text-xs text-slate-500 mt-1">Lista com filtros + botão Modificar</div>
       </a>
-      <a href="personalizacao.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition sm:col-span-2">
-        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">7 · Configuração</div>
+      <a href="modelos.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
+        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">7 · Modelos</div>
+        <div class="font-semibold text-slate-900 mt-1">Meus modelos</div>
+        <div class="text-xs text-slate-500 mt-1">CRUD de modelos do médico (substâncias, fornecedor, aplicador)</div>
+      </a>
+      <a href="personalizacao.html" class="block bg-white border border-slate-200 hover:border-sky-400 hover:shadow-sm rounded-xl p-5 transition">
+        <div class="text-xs text-sky-600 font-semibold tracking-wide uppercase">8 · Configuração</div>
         <div class="font-semibold text-slate-900 mt-1">Personalização</div>
-        <div class="text-xs text-slate-500 mt-1">Upload de cabeçalho, rodapé e assinatura; dados profissionais (CRM, RQE)</div>
+        <div class="text-xs text-slate-500 mt-1">Médico, enfermeira/COREN, cabeçalho, rodapé, assinatura, texto padrão</div>
       </a>
     </div>
 
     <div class="mt-10 bg-white border border-slate-200 rounded-xl p-5 text-sm text-slate-600">
-      <div class="font-semibold text-slate-900 mb-1">Próximos passos</div>
-      <ol class="list-decimal list-inside space-y-1 text-sm">
-        <li>Validação visual do cliente.</li>
-        <li>Inclusão da tela de <strong>Resultados — Patch Test</strong> (UI das costas).</li>
-        <li>Aprovação para início do desenvolvimento técnico.</li>
-      </ol>
+      <div class="font-semibold text-slate-900 mb-1">O que evoluiu em relação ao Duo Test (sistema atual)</div>
+      <ul class="text-xs list-disc list-inside space-y-1">
+        <li>Catálogo de substâncias com campos descritivos (% concentração, veículo, onde é encontrada, reação cruzada, observações).</li>
+        <li>Página 2 automática do laudo com orientações <strong>só dos positivos</strong>.</li>
+        <li>UI anatômica de marcação no antebraço.</li>
+        <li>Envio do laudo por e-mail (médico + paciente).</li>
+        <li>Cabeçalho e rodapé independentes (não só "logo").</li>
+        <li>Histórico com filtros por modelo, período e status; busca por nome.</li>
+        <li>Auditoria/LGPD: registro de emissão, envio e abertura.</li>
+        <li>Arquitetura preparada para apps iOS/Android e novos tipos de teste (Patch em breve).</li>
+      </ul>
     </div>
 
-    <p class="text-center text-xs text-slate-400 mt-8">© IBAI Diagnósticos · Mockup HTML estático · Maio 2026</p>
+    <p class="text-center text-xs text-slate-400 mt-8">© IBAI Diagnósticos · Mockup HTML estático · v2 · Maio 2026</p>
   </div>
 </body>
 </html>
